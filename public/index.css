@@ -1,12 +1,12 @@
 /* ------------------------------------------------------- Variables */
 
 :root {
-  --color-primary: #7b5cff;
-  --color-primary-dark: #926ad4;
-  --color-secondary: #594975;
-  --color-secondary-dark: #373042;
-  --color-background: #18181a;
+  --color-primary: #E76515;
+  --color-primary-dark: #C44E00;
+  --color-secondary: #FFBA26;
+  --color-background: #131315;
   --color-text: #ffffff;
+  --color-surface: #dbdbdb;
 }
 
 /* ------------------------------------------------------- Fonts */
@@ -109,7 +109,6 @@ body {
   z-index: 100;
   width: 100%;
   height: 80px;
-  border-bottom: 1px solid var(--color-secondary-dark);
   transition: box-shadow 0.3s ease;
 }
 
@@ -148,7 +147,7 @@ body {
   content: "";
   width: 0%;
   height: 1px;
-  background: var(--color-secondary);
+  background: var(--color-primary);
   position: absolute;
   left: 0;
   bottom: -1rem;
@@ -168,7 +167,7 @@ body {
 }
 
 #home button {
-  background: var(--color-primary-dark);
+  background: var(--color-primary);
   color: var(--color-text);
   font: 500 1rem "satoshi-bold";
   display: inline-flex;
@@ -185,7 +184,7 @@ body {
 }
 
 #home button:hover {
-  background: var(--color-primary);
+  background: var(--color-secondary);
   transform: translateY(-10px);
 }
 
@@ -203,7 +202,7 @@ body {
   content: "";
   height: 25rem;
   width: 35rem;
-  background: var(--color-secondary);
+  background: var(--color-primary);
   position: absolute;
   top: 2rem;
   left: 13%;
@@ -214,7 +213,15 @@ body {
 /* ------------------------------------------------------- About */
 
 #about {
-  background: var(--color-secondary-dark);
+  background: var(--color-surface);
+}
+
+#about span {
+  color: var(--color-background);
+}
+
+#about .title_section {
+  color: var(--color-primary);
 }
 
 #about .container div:nth-child(2) {
@@ -234,7 +241,7 @@ body {
   width: 35rem;
   top: -10px;
   left: -13%;
-  background: var(--color-background);
+  background: var(--color-primary);
   position: absolute;
   z-index: 0;
   border-radius: 15px;
@@ -282,16 +289,16 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  border-bottom: 10px solid var(--color-primary);
-  border-top: 1px solid var(--color-secondary-dark);
-  border-left: 1px solid var(--color-secondary-dark);
-  border-right: 1px solid var(--color-secondary-dark);
+  border-bottom: 8px solid var(--color-primary);
+  border-top: 1px solid var(--color-secondary);
+  border-left: 1px solid var(--color-secondary);
+  border-right: 1px solid var(--color-secondary);
 }
 
 /* ------------------------------------------------------- Depoiments */
 
 #depoiments {
-  background: var(--color-secondary-dark);
+  background: var(--color-surface);
   text-align: center;
 }
 
@@ -309,7 +316,8 @@ body {
   box-shadow: 0px 0px 12px rgb(0, 0, 0, 0.08);
   border-radius: 0.5rem;
   padding: 2rem;
-  background: var(--color-primary-dark);
+  background: var(--color-background);
+  width: 30rem;
 }
 
 #depoiments blockquote p {
@@ -326,7 +334,11 @@ body {
   color: var(--color-text);
   position: absolute;
   top: -0.5rem;
-  left: -1rem;
+  left: -1.5rem;
+}
+
+#depoiments .title_section {
+  color: var(--color-primary);
 }
 
 #depoiments cite {
@@ -361,7 +373,7 @@ body {
 }
 
 #footer button {
-  background: var(--color-primary-dark);
+  background: var(--color-primary);
   color: var(--color-text);
   font: 500 1rem "satoshi-bold";
   display: inline-flex;
@@ -378,7 +390,7 @@ body {
 }
 
 #footer button:hover {
-  background: var(--color-primary);
+  background: var(--color-secondary);
   transform: translateY(-10px);
 }
 
