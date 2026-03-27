@@ -216,8 +216,21 @@ body {
   background: var(--color-surface);
 }
 
-#about span {
+#about span,
+#partners .subtitle,
+#footer .nav,
+#footer .contact,
+#footer .content {
   color: var(--color-background);
+  font-family: "satoshi-regular";
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#about .title_section,
+#partners .title_section,
+#footer .title_section {
+  color: var(--color-primary);
 }
 
 #about .title_section {
@@ -295,11 +308,95 @@ body {
   border-right: 1px solid var(--color-secondary);
 }
 
+/* ------------------------------------------------------- Partners */
+
+#partners {
+  text-align: center;
+  background: var(--color-surface);
+  padding: 6rem 0;
+}
+
+#partners .subtitle {
+  font-family: "satoshi-regular"; 
+  color: #131315; 
+  margin: 1rem 0 3rem 0;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#partners .title_section {
+  color: var(--color-primary);
+}
+
+#partners .partners_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 3rem 0 1rem;
+}
+
+#partners .partner_card {
+  background: #131315;
+  padding: 1.6rem 2rem;
+  border-radius: 18px;
+  min-width: 220px;
+  max-width: 240px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(231, 101, 21, 0.16);
+  box-shadow: 0 14px 28px rgba(0,0,0,.28);
+}
+
+#partners .partner_card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 24px rgba(231, 101, 21, 0.22);
+  background: #3a3d46e0;
+}
+
+#partners .partner_card img {
+  max-width: 150px;
+  max-height: 74px;
+  object-fit: contain;
+  display: block;
+}
+
+#partners .partner_card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgb(231, 101, 21, 0.2);
+}
+
+#partners .partner_card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#partners .partner_card img.logo-light {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  max-width: 175px;
+  max-height: 42px;
+}
+
+#partners .partner_card img.logo-badge {
+  background: #f4f4f4;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
 /* ------------------------------------------------------- Depoiments */
 
 #depoiments {
-  background: var(--color-surface);
+  background: var(--color-background); 
   text-align: center;
+  padding: 6rem 0;
 }
 
 #depoiments .wrapper {
@@ -362,6 +459,11 @@ body {
 
 #footer {
   border-bottom: 2px solid var(--color-primary);
+  background: var(--color-surface);
+}
+
+.footer-mobile {
+  background: var(--color-surface); 
 }
 
 #footer .container {
@@ -374,7 +476,7 @@ body {
 
 #footer button {
   background: var(--color-primary);
-  color: var(--color-text);
+  color: #131315;
   font: 500 1rem "satoshi-bold";
   display: inline-flex;
   align-items: center;
@@ -395,7 +497,7 @@ body {
 }
 
 #footer .nav {
-  color: var(--color-text);
+  color: #131315;
   font-family: "satoshi-regular";
 }
 
@@ -422,7 +524,7 @@ body {
 }
 
 #footer .nav ul a {
-  color: var(--color-text);
+  color: #131315;
   transition: color 0.2s;
 }
 
@@ -431,7 +533,7 @@ body {
 }
 
 #footer .contact {
-  color: var(--color-text);
+  color: #131315;
   font-family: "satoshi-regular";
   display: flex;
   gap: 10px;
@@ -439,6 +541,10 @@ body {
 }
 
 #footer .mobile {
+  display: none;
+}
+
+.footer-mobile {
   display: none;
 }
 
@@ -501,6 +607,24 @@ body {
     display: none;
   }
 
+  #about span,
+  #partners .subtitle,
+  .footer-mobile .nav,
+  .footer-mobile .contact,
+  .footer-mobile .content {
+    color: var(--color-background);
+  }
+
+  #partners .partners_wrapper {
+    gap: 2rem;
+  }
+
+  #partners .partner_card {
+    width: 100%;
+    max-width: 200px;
+    height: 150px;
+  }
+
   #footer .container {
     display: none;
   }
@@ -510,5 +634,83 @@ body {
     flex-direction: column;
     gap: 3rem;
     padding: 3rem 20px;
+  }
+
+  #footer {
+    display: none;
+  }
+
+  .footer-mobile {
+    display: flex;
+    border-bottom: 2px solid var(--color-primary);
+  }
+
+  .footer-mobile .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 20px;
+    align-items: flex-start;
+  }
+
+  .footer-mobile .title_section {
+    margin-bottom: 1rem;
+  }
+
+  .footer-mobile button {
+    background: var(--color-primary);
+    color: var(--color-text);
+    font: 500 1rem "satoshi-bold";
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2rem;
+    border-radius: 0.25rem;
+    height: 3rem;
+    transition: 0.3s;
+    width: fit-content;
+    margin-top: 2rem;
+    box-shadow:
+      rgb(204, 210, 232) 3px 3px 6px 1px,
+      rgb(255, 255, 255) -3px -3px 6px 1px;
+  }
+
+  .footer-mobile button:hover {
+    background: var(--color-secondary);
+    transform: translateY(-10px);
+  }
+
+  .footer-mobile .nav {
+    color: var(--color-text);
+    font-family: "satoshi-regular";
+  }
+
+  .footer-mobile .nav h4 {
+    margin-bottom: 10px;
+  }
+
+  .footer-mobile .nav ul {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  .footer-mobile .nav ul li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .footer-mobile .nav ul li i {
+    color: var(--color-primary);
+    font-size: 1rem;
+  }
+
+  .footer-mobile .contact {
+    color: var(--color-text);
+    font-family: "satoshi-regular";
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
   }
 }
