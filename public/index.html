@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="/public/index.css" />
-    <link rel="icon" type="image/png" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="stylesheet" href="/assets/style.css" />
     <title>CommitOne Systems</title>
 </head>
@@ -15,7 +15,7 @@
     <header id="header">
         <div class="header_container">
             <a href="#home" target="_self" rel="noopener noreferrer" aria-label="Ir para o início">
-                <img src="/assets/logo.jpeg" alt="Logo CommitOne Systems" />
+                <img src="/assets/logo.jpeg" alt="Logo CommitOne Systems" loading="eager" />
             </a>
             <nav>
                 <ul>
@@ -39,7 +39,7 @@
                     <button>Falar com um consultor</button>
                 </div>
                 <div class="image">
-                    <img src="/assets/home.png" alt="Imagem ilustrativa de tecnologia e negócios">
+                    <img src="/assets/home.png" alt="Imagem ilustrativa de tecnologia e negócios" loading="lazy">
                 </div>
             </div>
         </section>
@@ -47,7 +47,7 @@
         <section id="about">
             <div class="container flex">
                 <div class="image">
-                    <img src="/assets/about.jpg" alt="Equipe CommitOne Systems">
+                    <img src="/assets/about.jpg" alt="Equipe CommitOne Systems" loading="lazy">
                 </div>
                 <div>
                     <h2 class="title_section">Sobre nós</h2>
@@ -93,6 +93,22 @@
             </div>
         </section>
 
+        <section id="partners">
+            <div class="container">
+                <h2 class="title_section">Nossos Parceiros</h2>
+                <p class="subtitle">
+                    Trabalhamos ao lado de empresas líderes que compartilham nossa visão de inovação e excelência.
+                </p>
+                <div class="partners_wrapper">
+                    <div class="partner_card">
+                        <img src="/assets/fotos/parceiro1.jpg" alt="Parceiro 1" loading="lazy">
+                    </div>
+                    <div class="partner_card">
+                        <img src="/assets/fotos/parceiro2.jpg" alt="Parceiro 2" loading="lazy">
+                    </div>              </div>
+            </div>
+        </section>
+
         <section id="depoiments">
             <div class="container">
                 <h2 class="title_section">Depoimentos</h2>
@@ -108,7 +124,7 @@
                                 laudantium adipisci non architecto vel.
                             </p>
                             <cite>
-                                <img src="../assets/fotos/Depoimento_1.jpg" alt="foto-1" />
+                                <img src="/assets/fotos/Depoimento_1.jpg" alt="foto-1" loading="lazy" />
                                 Manoela Ferreira - Gerente de projetos
                             </cite>
                         </blockquote>
@@ -125,7 +141,7 @@
                                 laudantium adipisci non architecto vel.
                             </p>
                             <cite>
-                                <img src="../assets/fotos/Depoimento_2.jpg" alt="foto-2" />
+                                <img src="/assets/fotos/Depoimento_2.jpg" alt="foto-2" loading="lazy" />
                                 Fernanda Souza - Gerente de projetos
                             </cite>
                         </blockquote>
@@ -141,7 +157,7 @@
                                 laudantium adipisci non architecto vel.
                             </p>
                             <cite>
-                                <img src="../assets/fotos/Depoimento_3.jpg" alt="foto-3" />
+                                <img src="/assets/fotos/Depoimento_3.jpg" alt="foto-3" loading="lazy" />
                                 Julia de Abreu - CTO
                             </cite>
                         </blockquote>
@@ -181,7 +197,7 @@
                 </div>
         </footer>
 
-        <footer id="footer">
+        <footer class="footer-mobile">
             <div class="mobile">
                 <div>
                     <h3 class="title_section">Entre em contato</h3>
