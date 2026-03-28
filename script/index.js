@@ -21,19 +21,22 @@ function changeHeaderScroll() {
     header.classList.toggle('scroll', window.scrollY >= 100)
 }
 
-// ScrollRevel - configurações do scrollrevel
+// ScrollReveal - configurações do scrollreveal
 const scroll = ScrollReveal({
     origin: 'top',
-    distance: '30px',
-    duration: 850,
-    reset: true
+    distance: '50px',
+    duration: 900,
+    delay: 100,
+    easing: 'cubic-bezier(0.65, 0, 0.35, 1)',
+    reset: false,
+    mobile: true
 })
 
-scroll.reveal(
-    `#about .image,  #service .wrapper, #service .wrapper_card, #depoiments .wrapper, #footer .nav, #footer .mobile`,
-    { interval: 80 }
-)
-
+scroll.reveal('#home .container > div:first-child, #home .container .image', { origin: 'left', distance: '60px', duration: 1000, delay: 150 })
+scroll.reveal('#about .container > div, #service .wrapper_card', { origin: 'bottom', distance: '40px', duration: 900, interval: 120 })
+scroll.reveal('#partners .container > div', { origin: 'left', distance: '40px', duration: 900, interval: 120 })
+scroll.reveal('#depoiments .wrapper > div', { origin: 'right', distance: '40px', duration: 900, interval: 120 })
+scroll.reveal('#footer .nav, #footer .mobile', { origin: 'bottom', distance: '30px', duration: 800, interval: 60 })
 
 window.addEventListener('scroll', function () {
     changeHeaderScroll()
