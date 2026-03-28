@@ -548,15 +548,13 @@ body {
   display: none;
 }
 
-/* ------------------------------------------------------- Responsivo */
-
 @media (max-width: 767px) {
   .container {
     flex-direction: column;
     width: 100%;
     height: fit-content;
     padding: 3rem 10px 4rem 10px;
-    overflow-x: hiddden;
+    overflow-x: hidden;
   }
 
   .title_section {
@@ -587,34 +585,6 @@ body {
     align-items: center;
   }
 
-  #home .image {
-    display: none;
-  }
-
-  #about .image {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-
-  #about .container .image img {
-    width: 100%;
-    margin-top: 1rem;
-    margin-bottom: -2rem;
-  }
-
-  #about .container .image::before {
-    display: none;
-  }
-
-  #about span,
-  #partners .subtitle,
-  .footer-mobile .nav,
-  .footer-mobile .contact,
-  .footer-mobile .content {
-    color: var(--color-background);
-  }
-
   #partners .partners_wrapper {
     gap: 2rem;
   }
@@ -625,92 +595,11 @@ body {
     height: 150px;
   }
 
-  #footer .container {
-    display: none;
-  }
-
   #footer .mobile {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    padding: 3rem 20px;
-  }
-
-  #footer {
     display: none;
   }
 
   .footer-mobile {
-    display: flex;
-    border-bottom: 2px solid var(--color-primary);
-  }
-
-  .footer-mobile .container {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    padding: 3rem 20px;
-    align-items: flex-start;
-  }
-
-  .footer-mobile .title_section {
-    margin-bottom: 1rem;
-  }
-
-  .footer-mobile button {
-    background: var(--color-primary);
-    color: var(--color-text);
-    font: 500 1rem "satoshi-bold";
-    display: inline-flex;
-    align-items: center;
-    padding: 0 2rem;
-    border-radius: 0.25rem;
-    height: 3rem;
-    transition: 0.3s;
-    width: fit-content;
-    margin-top: 2rem;
-    box-shadow:
-      rgb(204, 210, 232) 3px 3px 6px 1px,
-      rgb(255, 255, 255) -3px -3px 6px 1px;
-  }
-
-  .footer-mobile button:hover {
-    background: var(--color-secondary);
-    transform: translateY(-10px);
-  }
-
-  .footer-mobile .nav {
-    color: var(--color-text);
-    font-family: "satoshi-regular";
-  }
-
-  .footer-mobile .nav h4 {
-    margin-bottom: 10px;
-  }
-
-  .footer-mobile .nav ul {
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    list-style: none;
-  }
-
-  .footer-mobile .nav ul li {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .footer-mobile .nav ul li i {
-    color: var(--color-primary);
-    font-size: 1rem;
-  }
-
-  .footer-mobile .contact {
-    color: var(--color-text);
-    font-family: "satoshi-regular";
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
+    display: none;
   }
 }
