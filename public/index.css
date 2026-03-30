@@ -74,7 +74,7 @@ body {
 
 .title_section,
 .title_card {
-  font-family: "satoshi-bold";
+  font-family: "satoshi-bold", sans-serif;
   color: var(--color-text);
 }
 
@@ -92,7 +92,7 @@ body {
 }
 
 .content {
-  font-family: "satoshi-regular";
+  font-family: "satoshi-regular", sans-serif;
   font-size: 1rem;
   color: var(--color-text);
 }
@@ -135,7 +135,7 @@ body {
 #header nav a {
   transition: color 0.2s;
   position: relative;
-  font-family: "satoshi-regular";
+  font-family: "satoshi-regular", sans-serif;
   color: var(--color-text);
 }
 
@@ -169,7 +169,7 @@ body {
 #home button {
   background: var(--color-primary);
   color: var(--color-text);
-  font: 500 1rem "satoshi-bold";
+  font: 500 1rem "satoshi-bold", sans-serif;
   display: inline-flex;
   align-items: center;
   padding: 0 2rem;
@@ -350,20 +350,6 @@ body {
   justify-content: center;
   border: 1px solid rgba(231, 101, 21, 0.16);
   box-shadow: 0 14px 28px rgba(0,0,0,.28);
-}
-
-#partners .partner_card:hover {
-  border-color: var(--color-primary);
-  transform: translateY(-5px);
-  box-shadow: 0px 12px 24px rgba(231, 101, 21, 0.22);
-  background: #3a3d46e0;
-}
-
-#partners .partner_card img {
-  max-width: 150px;
-  max-height: 74px;
-  object-fit: contain;
-  display: block;
 }
 
 #partners .partner_card:hover {
