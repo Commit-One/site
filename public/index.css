@@ -575,7 +575,7 @@ footer .nav ul a:hover {
     display: none;
   }
 
-  nav {
+  #header nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -592,24 +592,24 @@ footer .nav ul a:hover {
     flex-direction: column;
   }
 
-  nav.show .nav-logo {
+  #header nav.show .nav-logo {
     display: flex;
     align-items: left;
     justify-content: left;
     margin-top: 22px;
   }
 
-  nav.show .nav-logo img {
+  #header nav.show .nav-logo img {
     max-width: 216px !important;
     height: auto;
     margin-left: -1rem;
   }
 
-  nav.show {
+  #header nav.show {
     transform: translateX(0%);
   }
 
-  nav ul {
+  #header nav ul {
     flex-direction: column;
     gap: 0;
     display: flex;
@@ -619,11 +619,11 @@ footer .nav ul a:hover {
     gap: 1rem;
   }
 
-  nav ul li {
+  #header nav ul li {
     list-style: none;
   }
 
-  nav ul li a {
+  #header nav ul li a {
     display: block;
     color: white;
     font-size: 1rem;
@@ -631,11 +631,11 @@ footer .nav ul a:hover {
     cursor: pointer !important;
   }
 
-  nav ul li a:hover {
+  #header nav ul li a:hover {
     color: var(--color-primary);
   }
 
-  nav ul li a::after {
+  #header nav ul li a::after {
     display: none;
   }
 }
