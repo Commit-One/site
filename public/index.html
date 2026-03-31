@@ -3,34 +3,52 @@
 
 <head>
     <meta charset="UTF-8" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
     <meta name="description" content="CommitOne Systems: Tecnologia que impulsiona negócios. Criamos experiências digitais, sistemas e plataformas com padrão profissional, combinando inovação, performance e visão estratégica." />
+    
     <meta name="keywords" content="tecnologia, desenvolvimento de software, automação, inteligência artificial, qualidade de software, CommitOne Systems" />
+
     <meta property="og:title" content="CommitOne Systems - Tecnologia que impulsiona negócios" />
+    
     <meta property="og:description" content="Criamos experiências digitais, sistemas e plataformas com padrão profissional, combinando inovação, performance e visão estratégica." />
-    <meta property="og:image" content="/assets/logo.jpeg" />
+    
+    <meta property="og:image" content="../assets/logo.jpeg" />
     <meta property="og:url" content="https://commitone.tech" />
+    
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CommitOne Systems - Tecnologia que impulsiona negócios" />
     <meta name="twitter:description" content="Criamos experiências digitais, sistemas e plataformas com padrão profissional." />
-    <meta name="twitter:image" content="/assets/logo.jpeg" />
-    <link rel="stylesheet" href="/public/index.css" />
-    <link rel="icon" href="/assets/favicon.ico" sizes="any"/>
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
-    <link rel="apple-touch-icon" href="/assets/favicon.png"/>
-    <link rel="stylesheet" href="/assets/style.css" />
+    <meta name="twitter:image" content="../assets/logo.jpeg" />
+
+    <link rel="icon" href="../assets/favicon.ico" sizes="any"/>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg"/>
+    <link rel="apple-touch-icon" href="../assets/favicon.png"/>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="./index.css" /> 
+    
     <title>CommitOne Systems</title>
 </head>
 
 <body>
     <header id="header">
         <div class="header_container">
-            <a href="#home" target="_self" rel="noopener noreferrer" aria-label="Ir para o início">
-                <img src="/assets/logo.jpeg" alt="Logo CommitOne Systems" loading="eager" />
+            <a href="#home" aria-label="Voltar ao início">
+                <img src="../assets/logo.jpeg" alt="Logo CommitOne Systems" loading="eager" />
             </a>
+            <button class="toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
+                <div class="nav-logo">
+                    <img src="../assets/logo.jpeg" alt="Logo CommitOne Systems" loading="eager" />
+                </div>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">Sobre</a></li>
@@ -55,7 +73,7 @@
                     </button>
                 </div>
                 <div class="image">
-                    <img src="/assets/home.png" alt="Imagem ilustrativa de tecnologia e negócios" loading="lazy">
+                    <img src="../assets/home.png" alt="Imagem ilustrativa de tecnologia e negócios" loading="lazy">
                 </div>
             </div>
         </section>
@@ -63,7 +81,7 @@
         <section id="about">
             <div class="container flex">
                 <div class="image">
-                    <img src="/assets/about.jpg" alt="Equipe CommitOne Systems" loading="lazy">
+                    <img src="../assets/about.jpg" alt="Equipe CommitOne Systems" loading="lazy">
                 </div>
                 <div>
                     <h2 class="title_section">Sobre nós</h2>
@@ -116,15 +134,10 @@
                     Trabalhamos ao lado de empresas líderes que compartilham nossa visão de inovação e excelência.
                 </p>
                 <div class="partners_wrapper">
-                    <div class="partner_card">
-                        <img src="/assets/parceiros/parceiro1.png" alt="Parceiro 1" loading="lazy">
-                    </div>
-                    <div class="partner_card">
-                        <img src="/assets/parceiros/parceiro2.jpg" alt="Parceiro 2" loading="lazy">
-                    </div>              
-                    <div class="partner_card">
-                        <img src="/assets/parceiros/parceiro3.png" alt="Parceiro 3" loading="lazy">
-                    </div>                  </div>
+                    <div class="partner_card"></div>
+                    <div class="partner_card"></div>              
+                    <div class="partner_card"></div>                     
+                </div>
             </div>
         </section>
 
@@ -141,8 +154,11 @@
                                 O design é moderno, a navegação é intuitiva e a funcionalidade é perfeita.
                                 Estamos muito satisfeitos com o resultado!
                             </p>
-                            <cite>
-                                Yann Santana - CEO e Engenheiro Civil na VD Engenharia
+                            <cite>                                
+                                <span>
+                                    <strong>Yann Santana</strong>
+                                    <small>CEO - VD Engenharia</small>
+                                </span>
                             </cite>
                         </blockquote>
                     </div>
@@ -157,7 +173,10 @@
                                 A qualidade, o profissionalismo e a visão estratégica da equipe fizeram toda a diferença para o sucesso dos nossos projetos.
                             </p>
                             <cite>
-                                Samanta Almeida - CEO e Pedagoga na Creche e Escola Fazendinha
+                                <span>
+                                    <strong>Samanta Almeida</strong>
+                                    <small>CEO - Creche e Escola Fazendinha</small>
+                                </span>
                             </cite>
                         </blockquote>
                     </div>
@@ -171,7 +190,10 @@
                                 Estou muito satisfeito com o resultado e recomendo fortemente seus serviços!
                             </p>
                             <cite>
-                                Vinicius Santos - Arquiteto
+                                <span>
+                                    <strong>Vinicius Santos</strong>
+                                    <small>Arquiteto</small>
+                                </span>
                             </cite>
                         </blockquote>
                     </div>
@@ -185,7 +207,7 @@
                     <h3 class="title_section">Entre em contato</h3>
                     <p class="content">Entre em contato, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.
                     </p>
-                    <button onclick="window.open('https://wa.me/5521964511955?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20CommitOne.%20Poderia%20me%20fornecer%20mais%20informações?', '_blank');">Falar com consultor</button>
+                    <button onclick="window.open('https://wa.me/5515998859777?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20CommitOne.%20Poderia%20me%20fornecer%20mais%20informações?', '_blank');">Falar com consultor</button>
                 </div>
 
                 <div class="nav">
@@ -228,7 +250,7 @@
                     <h3 class="title_section">Entre em contato</h3>
                     <p class="content">Entre em contato, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.
                     </p>
-                    <button onclick="window.open('https://wa.me/5521964511955?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20CommitOne.%20Poderia%20me%20fornecer%20mais%20informações?', '_blank');">Falar com consultor</button>
+                    <button onclick="window.open('https://wa.me/5515998859777?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20CommitOne.%20Poderia%20me%20fornecer%20mais%20informações?', '_blank');">Falar com consultor</button>
                 </div>
 
                 <div class="nav">
@@ -267,7 +289,7 @@
     </main>
 
     <script src="https://unpkg.com/scrollreveal" defer></script>    
-    <script src="/script/index.js" defer></script>
+    <script src="../script/index.js" defer></script>
 </body>
 
 </html>

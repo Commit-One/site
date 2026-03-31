@@ -1,28 +1,36 @@
 /* ------------------------------------------------------- Variables */
 
 :root {
-  --color-primary: #E76515;
-  --color-primary-dark: #C44E00;
-  --color-secondary: #FFBA26;
+  --color-primary: #e76515;
+  --color-primary-dark: #c44e00;
+  --color-secondary: #ffba26;
   --color-background: #131315;
+  --color-background-dark: #131315;
   --color-text: #ffffff;
+  --color-text-dark: #131315;
   --color-surface: #dbdbdb;
+  --font-body: "satoshi-regular", sans-serif;
+  --font-heading: "satoshi-bold", sans-serif;
+  --shadow-card: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  --shadow-btn:
+    rgb(204, 210, 232) 3px 3px 6px 1px, rgb(255, 255, 255) -3px -3px 6px 1px;
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 10px;
+  --border-radius-lg: 15px;
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
 }
 
 /* ------------------------------------------------------- Fonts */
 
 @font-face {
   font-family: "satoshi-regular";
-  src:
-    url("/assets/fonts/Satoshi-Regular.otf") format("woff2"),
-    url("/assets/fonts/Satoshi-Regular.otf") format("woff2");
+  src: url("../assets/fonts/Satoshi-Regular.otf") format("opentype");
 }
 
 @font-face {
   font-family: "satoshi-bold";
-  src:
-    url("/assets/fonts/Satoshi-Bold.otf") format("woff2"),
-    url("/assets/fonts/Satoshi-Bold.otf") format("woff2");
+  src: url("../assets/fonts/Satoshi-Bold.otf") format("opentype");
 }
 
 /* ------------------------------------------------------- Reset */
@@ -74,7 +82,7 @@ body {
 
 .title_section,
 .title_card {
-  font-family: "satoshi-bold", sans-serif;
+  font-family: var(--font-heading);
   color: var(--color-text);
 }
 
@@ -92,15 +100,16 @@ body {
 }
 
 .content {
-  font-family: "satoshi-regular", sans-serif;
+  font-family: var(--font-body);
   font-size: 1rem;
   color: var(--color-text);
+  line-height: 1.6;
 }
 
 /* ------------------------------------------------------- Header */
 
 #header.scroll {
-  box-shadow: 0px 0px 12px rgb(0, 0, 0, 1);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 1);
 }
 
 #header {
@@ -109,7 +118,7 @@ body {
   z-index: 100;
   width: 100%;
   height: 80px;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow var(--transition-normal) ease;
 }
 
 #header .header_container {
@@ -119,6 +128,7 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  padding: 0 2rem;
 }
 
 #header img {
@@ -133,9 +143,9 @@ body {
 }
 
 #header nav a {
-  transition: color 0.2s;
+  transition: color var(--transition-fast);
   position: relative;
-  font-family: "satoshi-regular", sans-serif;
+  font-family: var(--font-body);
   color: var(--color-text);
 }
 
@@ -143,7 +153,7 @@ body {
   color: var(--color-primary);
 }
 
-#header nav a:after {
+#header nav a::after {
   content: "";
   width: 0%;
   height: 1px;
@@ -151,7 +161,7 @@ body {
   position: absolute;
   left: 0;
   bottom: -1rem;
-  transition: width 0.2s;
+  transition: width var(--transition-fast);
 }
 
 #header nav a:hover::after {
@@ -160,27 +170,32 @@ body {
 
 /* ------------------------------------------------------- Home */
 
-#home .container div:first-child {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+#home {
+  padding-top: 5rem;
+}
+
+#home .container {
+  div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 #home button {
   background: var(--color-primary);
   color: var(--color-text);
-  font: 500 1rem "satoshi-bold", sans-serif;
+  font: 500 1rem var(--font-heading);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 0 2rem;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius-sm);
   height: 3.5rem;
-  transition: 0.3s;
+  transition: all var(--transition-normal);
   width: fit-content;
   margin-top: 2rem;
-  box-shadow:
-    rgb(204, 210, 232) 3px 3px 6px 1px,
-    rgb(255, 255, 255) -3px -3px 6px 1px;
+  box-shadow: var(--shadow-btn);
 }
 
 #home button:hover {
@@ -194,11 +209,11 @@ body {
 
 #home .container .image img {
   width: 35rem;
-  border-radius: 15px;
+  border-radius: var(--border-radius-lg);
   margin-top: 5rem;
 }
 
-#home .container .image:before {
+#home .container .image::before {
   content: "";
   height: 25rem;
   width: 35rem;
@@ -207,7 +222,7 @@ body {
   top: 2rem;
   left: 13%;
   z-index: -1;
-  border-radius: 15px;
+  border-radius: var(--border-radius-lg);
 }
 
 /* ------------------------------------------------------- About */
@@ -216,21 +231,11 @@ body {
   background: var(--color-surface);
 }
 
-#about span,
-#partners .subtitle,
-#footer .nav,
-#footer .contact,
-#footer .content {
-  color: var(--color-background);
-  font-family: "satoshi-regular";
+#about span {
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
-}
-
-#about .title_section,
-#partners .title_section,
-#footer .title_section {
-  color: var(--color-primary);
 }
 
 #about .title_section {
@@ -257,14 +262,14 @@ body {
   background: var(--color-primary);
   position: absolute;
   z-index: 0;
-  border-radius: 15px;
+  border-radius: var(--border-radius-lg);
 }
 
 #about .container .image img {
   position: relative;
   z-index: 1;
   width: 33rem;
-  border-radius: 15px;
+  border-radius: var(--border-radius-lg);
   margin-top: 2rem;
 }
 
@@ -275,12 +280,10 @@ body {
 }
 
 #service .subtitle {
-  font-family: "satoshi-regular";
+  font-family: var(--font-body);
   color: var(--color-text);
-  margin: 1rem 0 3rem 0;
+  margin: 1rem auto 3rem;
   width: 60%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #service .wrapper {
@@ -293,10 +296,10 @@ body {
 #service .wrapper_card {
   background: var(--color-background);
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: var(--border-radius-md);
   width: 20rem;
   height: fit-content;
-  font-family: "satoshi-regular";
+  font-family: var(--font-body);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -313,16 +316,13 @@ body {
 #partners {
   text-align: center;
   background: var(--color-surface);
-  padding: 6rem 0;
 }
 
 #partners .subtitle {
-  font-family: "satoshi-regular"; 
-  color: #131315; 
-  margin: 1rem 0 3rem 0;
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  margin: 1rem auto 2rem;
   width: 60%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #partners .title_section {
@@ -339,8 +339,7 @@ body {
 }
 
 #partners .partner_card {
-  background: #131315;
-  padding: 1.6rem 2rem;
+  padding: 0;
   border-radius: 18px;
   min-width: 220px;
   max-width: 240px;
@@ -348,41 +347,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(231, 101, 21, 0.16);
-  box-shadow: 0 14px 28px rgba(0,0,0,.28);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--color-background);
 }
 
-#partners .partner_card:hover {
-  border-color: var(--color-primary);
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 16px rgb(231, 101, 21, 0.2);
+#partners .partner_card:nth-child(1) {
+  background-image: url("../assets/parceiros/parceiro1.png");
 }
 
-#partners .partner_card img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+#partners .partner_card:nth-child(2) {
+  background-image: url("../assets/parceiros/parceiro2.jpg");
+  background-color: var(--color-text);
 }
 
-#partners .partner_card img.logo-light {
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  max-width: 175px;
-  max-height: 42px;
+#partners .partner_card:nth-child(3) {
+  background-image: url("../assets/parceiros/parceiro3.png");
 }
 
-#partners .partner_card img.logo-badge {
-  background: #f4f4f4;
-  padding: 10px 14px;
-  border-radius: 12px;
-}
 /* ------------------------------------------------------- Depoiments */
 
 #depoiments {
-  background: var(--color-background); 
+  background: var(--color-background);
   text-align: center;
-  padding: 6rem 0;
 }
 
 #depoiments .wrapper {
@@ -396,11 +386,16 @@ body {
 }
 
 #depoiments blockquote {
-  box-shadow: 0px 0px 12px rgb(0, 0, 0, 0.08);
-  border-radius: 0.5rem;
+  box-shadow: var(--shadow-card);
+  border-radius: var(--border-radius-sm);
   padding: 2rem;
   background: var(--color-background);
   width: 30rem;
+  border: 1px solid var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20rem;
 }
 
 #depoiments blockquote p {
@@ -409,15 +404,16 @@ body {
   text-indent: 1.9rem;
   color: var(--color-text);
   font-size: 1rem;
-  font-family: "satoshi-regular";
+  font-family: var(--font-body);
 }
 
 #depoiments blockquote p span {
-  font: 700 2.5rem "satoshi-regular";
-  color: var(--color-text);
+  font: 700 2.5rem var(--font-body);
+  color: var(--color-primary);
   position: absolute;
-  top: -0.5rem;
-  left: -1.5rem;
+  top: -1rem;
+  left: -1rem;
+  opacity: 0.3;
 }
 
 #depoiments .title_section {
@@ -428,119 +424,235 @@ body {
   display: flex;
   align-items: center;
   text-align: left;
-  gap: 0.6rem;
+  gap: 0.75rem;
   color: var(--color-text);
-  font: 700 13px "satoshi-regular";
+  font: 700 13px var(--font-body);
+  margin-top: 1rem;
 }
 
-#depoiments .wrapper cite img {
-  width: 2rem;
-  height: 2rem;
-
+#depoiments cite img {
+  width: 2.5rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
   object-fit: cover;
-  clip-path: circle();
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+#depoiments cite span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 /* ------------------------------------------------------- Footer */
 
-#footer {
+footer {
   border-bottom: 2px solid var(--color-primary);
   background: var(--color-surface);
 }
 
-.footer-mobile {
-  background: var(--color-surface); 
-}
-
-#footer .container {
+footer .container {
   align-items: flex-start;
 }
 
-#footer .title_section {
+footer .title_section {
   margin-bottom: 1rem;
+  color: var(--color-primary);
 }
 
-#footer button {
+footer .content {
+  color: var(--color-text-dark);
+}
+
+footer button {
   background: var(--color-primary);
-  color: #131315;
-  font: 500 1rem "satoshi-bold";
+  color: var(--color-text);
+  font: 500 1rem var(--font-heading);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 0 2rem;
-  border-radius: 0.25rem;
-  height: 3rem;
-  transition: 0.3s;
+  border-radius: var(--border-radius-sm);
+  height: 3.5rem;
+  transition: all var(--transition-normal);
   width: fit-content;
   margin-top: 2rem;
-  box-shadow:
-    rgb(204, 210, 232) 3px 3px 6px 1px,
-    rgb(255, 255, 255) -3px -3px 6px 1px;
+  box-shadow: var(--shadow-btn);
 }
 
-#footer button:hover {
+footer button:hover {
   background: var(--color-secondary);
   transform: translateY(-10px);
 }
 
-#footer .nav {
-  color: #131315;
-  font-family: "satoshi-regular";
+footer .nav {
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
 }
 
-#footer .nav h4 {
+footer .nav h4 {
   margin-bottom: 10px;
+  font-family: var(--font-heading);
 }
 
-#footer .nav ul {
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
+footer .nav ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-#footer .nav ul li {
+footer .nav ul li {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-#footer .nav ul li i {
+footer .nav ul li i {
   color: var(--color-primary);
   font-size: 1rem;
 }
 
-#footer .nav ul a {
-  color: #131315;
-  transition: color 0.2s;
+footer .nav ul a {
+  color: var(--color-text-dark);
+  transition: color var(--transition-fast);
 }
 
-#footer .nav ul a:hover {
+footer .nav ul a:hover {
   color: var(--color-primary);
 }
 
-#footer .contact {
-  color: #131315;
-  font-family: "satoshi-regular";
+/* Desktop footer */
+#footer {
   display: flex;
-  gap: 10px;
-  flex-direction: column;
 }
 
-#footer .mobile {
-  display: none;
+#footer .container {
+  display: flex;
 }
 
 .footer-mobile {
   display: none;
 }
 
+/* ------------------------------------------------------- Hamburger Menu */
+
+.toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 1.5rem;
+  background: none;
+  padding: 0;
+  z-index: 101;
+}
+
+.toggle span {
+  width: 100%;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: all var(--transition-normal) ease;
+}
+
+.toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Menu Mobile */
 @media (max-width: 767px) {
+  .nav-logo {
+    display: none;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    max-width: 280px;
+    height: 100vh;
+    background: var(--color-background);
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal) ease;
+    overflow-y: auto;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav.show .nav-logo {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-top: 22px;
+  }
+
+  nav.show .nav-logo img {
+    max-width: 216px !important;
+    height: auto;
+    margin-left: -1rem;
+  }
+
+  nav.show {
+    transform: translateX(0%);
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    margin-top: 3rem;
+    gap: 1rem;
+  }
+
+  nav ul li {
+    list-style: none;
+  }
+
+  nav ul li a {
+    display: block;
+    color: white;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    cursor: pointer !important;
+  }
+
+  nav ul li a:hover {
+    color: var(--color-primary);
+  }
+
+  nav ul li a::after {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------- Mobile Responsive */
+
+@media (max-width: 767px) {
+  .toggle {
+    display: flex !important;
+  }
+
   .container {
     flex-direction: column;
     width: 100%;
     max-width: 100%;
     height: fit-content;
-    padding: 3rem 1rem 4rem 1rem;
+    padding: 3rem 2rem 4rem;
     overflow-x: hidden;
   }
 
@@ -555,23 +667,18 @@ body {
     font-size: 1.5rem;
   }
 
-  #header > div {
-    margin: 0;
+  #header .header_container {
     padding: 0 1rem;
   }
 
-  #header > div img {
-    margin-left: 0;
+  #header img {
     max-width: 160px;
     width: auto;
-  }
-
-  #header nav {
-    display: none;
+    margin-left: -1rem;
   }
 
   #home .container {
-    padding-top: 7rem;
+    padding-top: 2rem;
   }
 
   #home .container .image,
@@ -588,17 +695,22 @@ body {
     margin-top: 1rem;
   }
 
+  #home .container .image::before,
   #about .container .image::before {
     width: 100%;
     max-width: 100%;
-    left: 0;
+    height: 90%;
+    left: 0px;
+    top: 10px;
   }
 
   #home button {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+
+  #service .subtitle {
+    width: 100%;
+    padding: 0 1rem;
   }
 
   #partners .partners_wrapper {
@@ -609,7 +721,6 @@ body {
     width: calc(50% - 0.5rem);
     max-width: 100%;
     min-width: 0;
-    height: auto;
   }
 
   #depoiments .wrapper {
@@ -624,117 +735,32 @@ body {
     box-sizing: border-box;
     padding: 1.5rem;
     margin: 0;
+    height: fit-content;
   }
 
   #depoiments blockquote p {
     text-indent: 1rem;
+    font-size: 0.95rem;
   }
 
-  #footer .container {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding-bottom: 2rem;
+  #depoiments cite {
+    flex-wrap: wrap;
+    font-size: 12px;
+    margin-top: 0.75rem;
   }
 
-  #footer .mobile {
-    display: block;
+  #depoiments cite img {
+    width: 2rem;
+    height: 2rem;
+    min-width: 2rem;
   }
 
-  .footer-mobile {
-    display: block;
-  }
-}
-
-/* ------------------------------------------------------- Patch mobile sections: home, about, footer */
-
-@media (max-width: 767px) {
-  #home,
-  #about,
-  #footer,
-  .footer-mobile {
-    overflow: hidden;
-  }
-
-  #home .container,
-  #about .container {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
-  }
-
-  #home .container {
-    padding-top: 7rem;
-  }
-
-  #home .container > div:first-child,
-  #about .container > div:last-child {
-    width: 100%;
-  }
-
-  #home .container .image,
-  #about .container .image {
-    position: relative;
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  #home .container .image::before,
-  #about .container .image::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    max-width: 100%;
-    border-radius: 1.5rem;
-    z-index: 0;
-  }
-
-  #home .container .image::before {
-    top: -1rem;
-    height: calc(100% - 2rem);
-  }
-
-  #about .container .image::before {
-    top: -0.75rem;
-    height: calc(100% - 1.5rem);
-  }
-
-  #home .container .image img,
-  #about .container .image img {
-    position: relative;
-    z-index: 1;
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    border-radius: 1.25rem;
-  }
-
-  #about .container {
-    gap: 2rem;
-  }
-
-  #about .container .image {
-    margin-bottom: 0.5rem;
-  }
-
-  #about .content {
-    display: block;
-    line-height: 1.8;
-  }
-
-  /* evita exibir o footer desktop no mobile */
-  #footer .container {
+  #footer {
     display: none;
   }
 
   .footer-mobile {
     display: block;
-    background: var(--color-surface);
     border-bottom: 2px solid var(--color-primary);
   }
 
@@ -756,16 +782,16 @@ body {
   .footer-mobile .nav a,
   .footer-mobile .contact a,
   .footer-mobile .nav li {
-    color: var(--color-background);
-    font-family: "satoshi-regular";
+    color: var(--color-text-dark);
+    font-family: var(--font-body);
     font-size: 1rem;
     line-height: 1.6;
   }
 
   .footer-mobile .nav h4 {
-    color: var(--color-background);
+    color: var(--color-text-dark);
     margin-bottom: 0.75rem;
-    font-family: "satoshi-bold";
+    font-family: var(--font-heading);
     font-size: 1.15rem;
   }
 
@@ -809,15 +835,17 @@ body {
     align-items: center;
     justify-content: center;
     background: var(--color-primary);
-    color: #131315;
-    font: 500 1rem "satoshi-bold";
-    border-radius: 0.5rem;
+    color: var(--color-text-dark);
+    font: 500 1rem var(--font-heading);
+    border-radius: var(--border-radius-md);
     box-shadow: 0 10px 24px rgba(231, 101, 21, 0.18);
     margin-top: 1.5rem;
+    transition: all var(--transition-normal);
+    color: var(--color-text);
   }
 
   .footer-mobile button:hover {
-    transform: none;
-    background: var(--color-primary);
+    background: var(--color-secondary);
+    transform: translateY(-5px);
   }
 }
