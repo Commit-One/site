@@ -540,22 +540,24 @@ footer .nav ul a:hover {
 
 /* Menu Mobile */
 @media (max-width: 767px) {
-  nav {
-    display: none;
+  #header nav {
+    display: block;
   }
 
   #header nav ul {
-    flex-direction: column;
-    gap: 0;
     display: flex;
-    flex-direction: column;
-    padding-left: 2rem;
-    margin-top: 3rem;
-    gap: 1rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0;
+    padding-left: 0;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 
   #header nav ul li {
     list-style: none;
+    flex: 0 0 auto;
   }
 
   #header nav ul li a {
