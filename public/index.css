@@ -136,6 +136,10 @@ body {
   height: auto;
 }
 
+#header nav {
+  display: flex;
+}
+
 #header nav ul {
   list-style: none;
   display: flex;
@@ -588,8 +592,13 @@ footer .nav ul a:hover {
     transition: transform var(--transition-normal) ease;
     overflow-y: auto;
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.8);
-    display: flex;
+    display: none;
     flex-direction: column;
+  }
+
+  #header nav.show {
+    display: flex;
+    transform: translateX(0%);
   }
 
   #header nav.show .nav-logo {
@@ -603,10 +612,6 @@ footer .nav ul a:hover {
     max-width: 216px !important;
     height: auto;
     margin-left: -1rem;
-  }
-
-  #header nav.show {
-    transform: translateX(0%);
   }
 
   #header nav ul {
