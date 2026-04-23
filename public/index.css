@@ -357,6 +357,12 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-color: var(--color-background);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+#partners .partner_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 #partners .partner_card:nth-child(1) {
@@ -371,6 +377,16 @@ body {
 #partners .partner_card:nth-child(3) {
   background-image: url("../assets/parceiros/parceiro3.png");
 }
+
+.partner_card {
+    position: relative;
+}
+
+.partner_card a {
+    position: absolute;
+    inset: 0; /* ocupa todo o card */
+    z-index: 10;
+} 
 
 /* ------------------------------------------------------- Depoiments */
 
